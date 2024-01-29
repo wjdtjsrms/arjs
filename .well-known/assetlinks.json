@@ -1,0 +1,10 @@
+[
+  {
+    "relation": [ "delegate_permission/common.handle_all_urls" ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "kr.perfectree.heydealer",
+      "sha256_cert_fingerprints": [ "1F:07:BA:A1:5A:9E:4D:2E:BC:C4:C7:ED:87:F8:0E:A6:80:D0:58:F9:BF:36:60:73:9B:15:9D:4C:F5:AB:F4:46" ]
+    }
+  }
+]
