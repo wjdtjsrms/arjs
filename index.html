@@ -34,8 +34,12 @@
 </head>
 <body>
     <!--IMAGETARGETS-->
+		<imagetarget id='bear' src='targets/bear.png'></imagetarget>
+		<imagetarget id='bfly' src='targets/bfly.png'></imagetarget>
 		<imagetarget id='flower' src='targets/flower.png'></imagetarget>
 		<imagetarget id='lady' src='targets/lady.png'></imagetarget>
+		<imagetarget id='reel' src='targets/reel.png'></imagetarget>
+		<imagetarget id='rmn' src='targets/rmn.png'></imagetarget>
 
     <video id="webcam-video" muted autoplay playsinline style="width:1px;position:absolute"></video>
     <!-- <video id="webcam-video" muted autoplay playsinline style="width:100%; height:100%; object-fit:cover; position:absolute"></video> -->
@@ -106,9 +110,9 @@
                 
                 document.getElementById("startARDiv").style.display = "none";
                 createUnityInstance(document.querySelector("#unity-canvas"), {
-                    dataUrl: "Build/WebBuild.data",
-                    frameworkUrl: "Build/WebBuild.framework.js",
-                    codeUrl: "Build/WebBuild.wasm",
+                    dataUrl: "Build/WebBuild.data.unityweb",
+                    frameworkUrl: "Build/WebBuild.framework.js.unityweb",
+                    codeUrl: "Build/WebBuild.wasm.unityweb",
                     streamingAssetsUrl: "StreamingAssets",
                     companyName: "DefaultCompany",
                     productName: "ImagineWebAR",
