@@ -34,68 +34,12 @@
 </head>
 <body>
     <!--IMAGETARGETS-->
-    <imagetarget id='bear' src='targets/Test (1).png'></imagetarget>
-    <imagetarget id='bfly' src='targets/Test (2).png'></imagetarget>
-    <imagetarget id='flower' src='targets/Test (3).png'></imagetarget>
-    <imagetarget id='lady' src='targets/Test (4).png'></imagetarget>
-    <imagetarget id='reel' src='targets/Test (5).png'></imagetarget>
-    <imagetarget id='rmn' src='targets/Test (6).png'></imagetarget>
-
-    <imagetarget id='bear1' src='targets/Test (7).png'></imagetarget>
-    <imagetarget id='bfly1' src='targets/Test (8).png'></imagetarget>
-    <imagetarget id='flower1' src='targets/Test (9).png'></imagetarget>
-    <imagetarget id='lady1' src='targets/Test (10).png'></imagetarget>
-    <imagetarget id='reel1' src='targets/Test (11).png'></imagetarget>
-    <imagetarget id='rmn1' src='targets/Test (12).png'></imagetarget>
-
-    <imagetarget id='bear2' src='targets/Test (13).png'></imagetarget>
-    <imagetarget id='bfly2' src='targets/Test (14).png'></imagetarget>
-    <imagetarget id='flower2' src='targets/Test (15).png'></imagetarget>
-    <imagetarget id='lady2' src='targets/Test (16).png'></imagetarget>
-    <imagetarget id='reel2' src='targets/Test (17).png'></imagetarget>
-    <imagetarget id='rmn2' src='targets/Test (18).png'></imagetarget>
-
-    <imagetarget id='bear3' src='targets/Test (19).png'></imagetarget>
-    <imagetarget id='bfly3' src='targets/Test (20).png'></imagetarget>
-    <imagetarget id='flower3' src='targets/Test (21).png'></imagetarget>
-    <imagetarget id='lady3' src='targets/Test (22).png'></imagetarget>
-    <imagetarget id='reel3' src='targets/Test (23).png'></imagetarget>
-    <imagetarget id='rmn3' src='targets/Test (24).png'></imagetarget>
-
-    <imagetarget id='bear4' src='targets/Test (25).png'></imagetarget>
-    <imagetarget id='bfly4' src='targets/Test (26).png'></imagetarget>
-    <imagetarget id='flower4' src='targets/Test (27).png'></imagetarget>
-    <imagetarget id='lady4' src='targets/Test (28).png'></imagetarget>
-    <imagetarget id='reel4' src='targets/Test (29).png'></imagetarget>
-    <imagetarget id='rmn4' src='targets/Test (30).png'></imagetarget>
-
-    <imagetarget id='bear5' src='targets/Test (31).png'></imagetarget>
-    <imagetarget id='bfly5' src='targets/Test (32).png'></imagetarget>
-    <imagetarget id='flower5' src='targets/Test (33).png'></imagetarget>
-    <imagetarget id='lady5' src='targets/Test (34).png'></imagetarget>
-    <imagetarget id='reel5' src='targets/Test (35).png'></imagetarget>
-    <imagetarget id='rmn5' src='targets/Test (36).png'></imagetarget>
-
-    <imagetarget id='bear6' src='targets/Test (37).png'></imagetarget>
-    <imagetarget id='bfly6' src='targets/Test (38).png'></imagetarget>
-    <imagetarget id='flower6' src='targets/Test (39).png'></imagetarget>
-    <imagetarget id='lady6' src='targets/Test (40).png'></imagetarget>
-    <imagetarget id='reel6' src='targets/Test (41).png'></imagetarget>
-    <imagetarget id='rmn6' src='targets/Test (42).png'></imagetarget>
-
-    <imagetarget id='bear7' src='targets/Test (43).png'></imagetarget>
-    <imagetarget id='bfly7' src='targets/Test (44).png'></imagetarget>
-    <imagetarget id='flower7' src='targets/Test (45).png'></imagetarget>
-    <imagetarget id='lady7' src='targets/Test (46).png'></imagetarget>
-    <imagetarget id='reel7' src='targets/Test (47).png'></imagetarget>
-    <imagetarget id='rmn7' src='targets/Test (48).png'></imagetarget>
-
-    <imagetarget id='bear8' src='targets/Test (49).png'></imagetarget>
-    <imagetarget id='bfly8' src='targets/Test (50).png'></imagetarget>
-    <imagetarget id='flower8' src='targets/Test (51).png'></imagetarget>
-    <imagetarget id='lady8' src='targets/Test (52).png'></imagetarget>
-    <imagetarget id='reel8' src='targets/Test (53).png'></imagetarget>
-    <imagetarget id='rmn8' src='targets/Test (54).png'></imagetarget>
+		<imagetarget id='bear' src='targets/bear.png'></imagetarget>
+		<imagetarget id='bfly' src='targets/bfly.png'></imagetarget>
+		<imagetarget id='flower' src='targets/flower.png'></imagetarget>
+		<imagetarget id='lady' src='targets/lady.png'></imagetarget>
+		<imagetarget id='reel' src='targets/reel.png'></imagetarget>
+		<imagetarget id='rmn' src='targets/rmn.png'></imagetarget>
 
     <video id="webcam-video" muted autoplay playsinline style="width:1px;position:absolute"></video>
     <!-- <video id="webcam-video" muted autoplay playsinline style="width:100%; height:100%; object-fit:cover; position:absolute"></video> -->
@@ -137,191 +81,192 @@
     <script src="itracker.js" type="text/javascript"></script>
     <script src="Build/WebBuild.loader.js"></script>
     <script>
-        var initialize = async () => {
-            var unityCanvas = document.querySelector("#unity-canvas");
-            var videoCanvas = document.querySelector("#video-canvas");
-            window.arCamera = new ARCamera(unityCanvas, videoCanvas);
-            window.iTracker = new ImageTracker(arCamera);
-            try {
-                await window.iTracker.initialize();
-                console.log("ImageTracker initialized!");
-            }
-            catch {
-                console.error("Failed to initialize ImageTracker. Are you missing opencv.js? " + error);
-                ShowError("Failed to initialize the experience.");
-                return;
-            }
-
-            await LoadWebcams();
-            document.getElementById("startARButton").style.display = "block";
-        }
-        initialize();
-        var container = document.querySelector("#unity-container");
-        var canvas = document.querySelector("#unity-canvas");
-        var loadingBar = document.querySelector("#unity-loading-bar");
-        var progressBarFull = document.querySelector("#unity-progress-bar-full");
-        function StartAR() {
-            canvas.style.width = window.innerWidth + "px";
-            canvas.style.height = window.innerHeight + "px";
-
-            document.getElementById("startARDiv").style.display = "none";
-            createUnityInstance(document.querySelector("#unity-canvas"), {
-                dataUrl: "Build/WebBuild.data.unityweb",
-                frameworkUrl: "Build/WebBuild.framework.js.unityweb",
-                codeUrl: "Build/WebBuild.wasm.unityweb",
-                streamingAssetsUrl: "StreamingAssets",
-                companyName: "DefaultCompany",
-                productName: "ImagineWebAR",
-                productVersion: "0.1.0",
-                //webglContextAttributes: { "preserveDrawingBuffer": true },
-                // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-                // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
-            },
-                (progress) => {
-                    progressBarFull.style.width = 100 * progress + "%";
+            var initialize = async() =>{
+                var unityCanvas = document.querySelector("#unity-canvas");
+                var videoCanvas = document.querySelector("#video-canvas");
+                window.arCamera = new ARCamera(unityCanvas, videoCanvas);
+                window.iTracker = new ImageTracker(arCamera);
+                try{
+                    await window.iTracker.initialize();
+                    console.log("ImageTracker initialized!");
                 }
-            ).then((unityInstance) => {
-                window.unityInstance = unityInstance;
-                RequestWebcam();
-                loadingBar.style.display = "none";
-            });
-            loadingBar.style.display = "block";
-        }
-        //Set Facing Mode here ('environment', 'user', '')
-        window.unityFacingMode = "environment"
-        window.WEBCAM_SETTINGS = {
-            video: {
-                facingMode: unityFacingMode,
-            },
-            audio: false
-        };
-        window.requestingForPermissions = false;
-        async function RequestWebcam() {
-            window.requestingForPermissions = true;
-            try {
-                window.webcamStream = await navigator.mediaDevices.getUserMedia(window.WEBCAM_SETTINGS);
-                console.log("Webcam access granted");
-                requestingForPermissions = false;
+                catch{
+                    console.error("Failed to initialize ImageTracker. Are you missing opencv.js? " + error);
+                    ShowError("Failed to initialize the experience.");
+                    return;
+                }
+                
+                await LoadWebcams();
+                document.getElementById("startARButton").style.display = "block";
             }
-            catch (err) {
-                //user denied camera permission - show error panel
-                console.error("getUserMedia error - ", err);
-                ShowError("Failed to start the experience. Camera permission was denied");
-                window.requestingForPermissions = false;
+            initialize();
+            var container = document.querySelector("#unity-container");
+            var canvas = document.querySelector("#unity-canvas");
+            var loadingBar = document.querySelector("#unity-loading-bar");
+            var progressBarFull = document.querySelector("#unity-progress-bar-full");
+            function StartAR() {
+                canvas.style.width = window.innerWidth + "px";
+                canvas.style.height = window.innerHeight + "px";
+                
+                document.getElementById("startARDiv").style.display = "none";
+                createUnityInstance(document.querySelector("#unity-canvas"), {
+                    dataUrl: "Build/WebBuild.data.unityweb",
+                    frameworkUrl: "Build/WebBuild.framework.js.unityweb",
+                    codeUrl: "Build/WebBuild.wasm.unityweb",
+                    streamingAssetsUrl: "StreamingAssets",
+                    companyName: "DefaultCompany",
+                    productName: "ImagineWebAR",
+                    productVersion: "0.1.0",
+                    //webglContextAttributes: { "preserveDrawingBuffer": true },
+                    // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+                    // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+                    },
+                    (progress) => {
+                        progressBarFull.style.width = 100 * progress + "%";
+                    }
+                ).then((unityInstance) => {
+                    window.unityInstance = unityInstance;
+                    RequestWebcam();
+                    loadingBar.style.display = "none";
+                });
+                loadingBar.style.display = "block";
             }
-        }
-        async function StartWebcam() {
-            console.log("StartWebcam")
-            while (window.requestingForPermissions) {
-                // Wait until requestingForPermissions becomes true.
-                console.log("Waiting for permissions...");
-                await new Promise(resolve => setTimeout(resolve, 100)); // Adjust the delay time as needed.
-            }
-            console.log("Got Permissions");
-            if (window.webcamStream) {
-                const video = document.querySelector("#webcam-video");
-                video.srcObject = webcamStream;
-                try {
-                    await arCamera.startWebcam(video);
-                    console.log("Webcam started successfully");
-                    window.unityInstance.SendMessage('ARCamera', 'OnStartWebcamSuccess');
+            //Set Facing Mode here ('environment', 'user', '')
+		window.unityFacingMode = "environment"
+            window.WEBCAM_SETTINGS = {
+                video: {
+                    facingMode: unityFacingMode,
+                },
+                audio: false
+            };
+            window.requestingForPermissions = false;
+            async function RequestWebcam(){
+                window.requestingForPermissions = true;
+                try{
+                    window.webcamStream = await navigator.mediaDevices.getUserMedia(window.WEBCAM_SETTINGS);
+                    console.log("Webcam access granted");
+                    requestingForPermissions = false;
                 }
                 catch (err) {
-                    console.error("Webcam failed to start - ", err);
+                    //user denied camera permission - show error panel
+                    console.error("getUserMedia error - " , err);
+                    ShowError("Failed to start the experience. Camera permission was denied");
+                    window.requestingForPermissions = false;
+                }           
+            }
+            async function StartWebcam(){
+                console.log("StartWebcam")
+                while (window.requestingForPermissions) {
+                    // Wait until requestingForPermissions becomes true.
+                    console.log("Waiting for permissions...");
+                    await new Promise(resolve => setTimeout(resolve, 100)); // Adjust the delay time as needed.
+                }
+                console.log("Got Permissions");
+                if(window.webcamStream)
+                {
+                    const video = document.querySelector("#webcam-video");
+                    video.srcObject = webcamStream;
+                    try {
+                        await arCamera.startWebcam(video);
+                        console.log("Webcam started successfully");
+                        window.unityInstance.SendMessage('ARCamera', 'OnStartWebcamSuccess');
+                    }
+                    catch(err){
+                        console.error("Webcam failed to start - ", err);
+                        window.unityInstance.SendMessage('ARCamera', 'OnStartWebcamFail');
+                    }   
+                }
+                else{
+                    console.error("Webcam failed to start - permission not yet granted");
                     window.unityInstance.SendMessage('ARCamera', 'OnStartWebcamFail');
-                }
+                }  
             }
-            else {
-                console.error("Webcam failed to start - permission not yet granted");
-                window.unityInstance.SendMessage('ARCamera', 'OnStartWebcamFail');
-            }
-        }
-        async function LoadWebcams() {
-            let camDevices = [];
-            // let backCams = [];
-            let devices = await navigator.mediaDevices.enumerateDevices();
-            var ctr = 0;
-            devices.forEach(mediaDevice => {
-                if (mediaDevice.kind === 'videoinput') {
-                    if (window.unityFacingMode == 'environment' && !mediaDevice.label.includes('facing front')) {
-                        //back cam only
-                        camDevices.push(mediaDevice);
+            async function LoadWebcams(){
+                let camDevices = [];
+                // let backCams = [];
+                let devices = await navigator.mediaDevices.enumerateDevices();
+                var ctr = 0;
+                devices.forEach(mediaDevice => {
+                    if (mediaDevice.kind === 'videoinput') {
+                        if(window.unityFacingMode == 'environment' && !mediaDevice.label.includes('facing front')){
+                            //back cam only
+                            camDevices.push(mediaDevice);
+                        }
+                        else if(window.unityFacingMode == 'user' && mediaDevice.label.includes('facing front')){
+                            //front cam only
+                            camDevices.push(mediaDevice);
+                        }
+                        else{
+                            //back and front
+                            camDevices.push(mediaDevice);
+                        }   
+                        
+                        ctr++;
                     }
-                    else if (window.unityFacingMode == 'user' && mediaDevice.label.includes('facing front')) {
-                        //front cam only
-                        camDevices.push(mediaDevice);
+                });
+                var select = document.getElementById("chooseCamSel");
+                select.style.display = "block";
+                var count = 0;
+                //reverse array because some Android phones can't distinguish front and back cams at first load
+                //and when this happens, most of the time, front cam goes first and back cam goes last
+                camDevices = camDevices.reverse();
+                camDevices.forEach(mediaDevice => {
+                    const option = document.createElement('option');
+                    option.value = mediaDevice.deviceId;
+                    let label = `Camera ${count}`;
+                    if (mediaDevice.label) {
+                        label = mediaDevice.label
                     }
-                    else {
-                        //back and front
-                        camDevices.push(mediaDevice);
-                    }
-
-                    ctr++;
-                }
-            });
-            var select = document.getElementById("chooseCamSel");
-            select.style.display = "block";
-            var count = 0;
-            //reverse array because some Android phones can't distinguish front and back cams at first load
-            //and when this happens, most of the time, front cam goes first and back cam goes last
-            camDevices = camDevices.reverse();
-            camDevices.forEach(mediaDevice => {
-                const option = document.createElement('option');
-                option.value = mediaDevice.deviceId;
-                let label = `Camera ${count}`;
-                if (mediaDevice.label) {
-                    label = mediaDevice.label
-                }
-                const textNode = document.createTextNode(label);
-                option.appendChild(textNode);
-                select.appendChild(option);
-                count++;
-            });
-            iTracker.WEBCAM_NAME = select.options[select.selectedIndex].innerHTML;
-        }
-        function SelectCam() {
-            var select = document.getElementById("chooseCamSel");
-            window.deviceId = select.value;
-            window.WEBCAM_SETTINGS.video['deviceId'] = deviceId;
-            //console.log(window.WEBCAM_SETTINGS);
-            iTracker.WEBCAM_NAME = select.options[select.selectedIndex].innerHTML;
-        }
-        async function FlipCam() {
-            arCamera.stopWebcam();
-            window.WEBCAM_SETTINGS.video.deviceId = '';
-            if (window.WEBCAM_SETTINGS.video.facingMode == 'user') {
-                window.WEBCAM_SETTINGS.video.facingMode = 'environment';
-                arCamera.setFlipped(false);
+                    const textNode = document.createTextNode(label);
+                    option.appendChild(textNode);
+                    select.appendChild(option);
+                    count++;
+                });
+                iTracker.WEBCAM_NAME = select.options[select.selectedIndex].innerHTML;
             }
-            else {
-                window.WEBCAM_SETTINGS.video.facingMode = 'user';
-                arCamera.setFlipped(true);
+            function SelectCam(){
+                var select = document.getElementById("chooseCamSel");
+                window.deviceId = select.value;
+                window.WEBCAM_SETTINGS.video['deviceId'] = deviceId;
+                //console.log(window.WEBCAM_SETTINGS);
+                iTracker.WEBCAM_NAME = select.options[select.selectedIndex].innerHTML;
             }
-            window.webcamStream = await navigator.mediaDevices.getUserMedia(window.WEBCAM_SETTINGS);
-            const video = document.querySelector("#webcam-video");
-            video.srcObject = webcamStream;
-            await arCamera.startWebcam(video);
-        }
-        function ShowError(error) {
-            document.getElementById("errorDiv").style.display = "flex";
-            document.getElementById("errorText").innerHTML = error;
-        }
-        function ShowScreenshot(dataUrl) {
-            document.getElementById("screenshotDiv").style.display = "flex";
-            document.getElementById("screenshotImg").src = dataUrl;
-            document.getElementById("screenshotImg").style.width = "80vw";
-            document.getElementById("screenshotImg").style.height = 80 / window.innerWidth * window.innerHeight + "vw";
-        }
-        function ShowConfirmUrl(url) {
-            document.getElementById("confirmUrlDiv").style.display = "flex";
-            window.newUrlString = url;
-            document.getElementById("confirmUrlText").innerText = "Are you sure you want to visit " + url;
-        }
-        window.ITRACKER_GLOBALS = {
-            //place global settings here
-            INTERNAL_SMOOTHFACTOR_POS: .075,
-        }
-
+            async function FlipCam(){
+                arCamera.stopWebcam();
+                window.WEBCAM_SETTINGS.video.deviceId = '';
+                if(window.WEBCAM_SETTINGS.video.facingMode == 'user'){
+                    window.WEBCAM_SETTINGS.video.facingMode = 'environment';
+                    arCamera.setFlipped(false);
+                }
+                else{
+                    window.WEBCAM_SETTINGS.video.facingMode = 'user';
+                    arCamera.setFlipped(true);
+                }
+                window.webcamStream = await navigator.mediaDevices.getUserMedia(window.WEBCAM_SETTINGS);
+                const video = document.querySelector("#webcam-video");
+                video.srcObject = webcamStream;
+                await arCamera.startWebcam(video);
+            }
+            function ShowError(error){
+                document.getElementById("errorDiv").style.display = "flex";
+                document.getElementById("errorText").innerHTML = error;
+            }
+            function ShowScreenshot(dataUrl){
+                document.getElementById("screenshotDiv").style.display = "flex";
+                document.getElementById("screenshotImg").src = dataUrl;
+                document.getElementById("screenshotImg").style.width = "80vw";
+                document.getElementById("screenshotImg").style.height = 80 / window.innerWidth * window.innerHeight + "vw";
+            }
+            function ShowConfirmUrl(url){
+                document.getElementById("confirmUrlDiv").style.display = "flex";
+                window.newUrlString = url;
+                document.getElementById("confirmUrlText").innerText = "Are you sure you want to visit " + url;                
+            }
+            window.ITRACKER_GLOBALS = {
+                //place global settings here
+                INTERNAL_SMOOTHFACTOR_POS: .075,
+            }
+            
     </script>
 </body>
 </html>
