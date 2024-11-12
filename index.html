@@ -31,9 +31,9 @@
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/AIWEBAR_WebBuild.loader.js";
       var config = {
-        dataUrl: buildUrl + "/AIWEBAR_WebBuild.data",
-        frameworkUrl: buildUrl + "/AIWEBAR_WebBuild.framework.js",
-        codeUrl: buildUrl + "/AIWEBAR_WebBuild.wasm",
+        dataUrl: buildUrl + "/AIWEBAR_WebBuild.data.unityweb",
+        frameworkUrl: buildUrl + "/AIWEBAR_WebBuild.framework.js.unityweb",
+        codeUrl: buildUrl + "/AIWEBAR_WebBuild.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Anipen",
         productName: "ImagineWebAR",
@@ -47,8 +47,8 @@
       var fullscreenButton = document.querySelector("#unity-fullscreen-button");
       var unityInstance = null;
       
-      canvasContainer.style.width = "1080px";
-      canvasContainer.style.height = "1920px";
+      canvasContainer.style.width = "1920px";
+      canvasContainer.style.height = "1080px";
       loadingBar.style.display = "block";
       var script = document.createElement("script");
       script.src = loaderUrl;
