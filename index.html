@@ -211,6 +211,7 @@
                 count++;
             });
             wTracker.WEBCAM_NAME = select.options[select.selectedIndex].innerHTML;
+            SelectCam(); //let's assume the normal camera is index 0 and avoid wide cameras
         }
         function SelectCam(){
             var select = document.getElementById("chooseCamSel");
@@ -218,6 +219,7 @@
             window.WEBCAM_SETTINGS.video['deviceId'] = deviceId;
             //console.log(window.WEBCAM_SETTINGS);
             wTracker.WEBCAM_NAME = select.options[select.selectedIndex].innerHTML;
+            console.log("selecting camera index [" + select.selectedIndex + "] -> " + wTracker.WEBCAM_NAME);
         }
         async function FlipCam(){
             arCamera.stopWebcam();
