@@ -91,11 +91,15 @@
             
             document.getElementById('startARDiv').style.display = 'none';
             createUnityInstance(document.querySelector("#unity-canvas"), {
-                    dataUrl: "Build/33194ea4c65582d0a92181d27e431b08.data.unityweb",
+                    dataUrl: "Build/909bab4282468bf05fa2cfd73ba11c37.data.unityweb",
                     frameworkUrl: "Build/8b9c39d6146def7fea8f8025e9fca045.framework.js.unityweb",
                     codeUrl: "Build/923f2bb23a24477beb98877c719adc63.wasm.unityweb",
                    cacheControl: function (url) {
+                    console.log("Test");
+                    console.log(url);
                     if (url.match(/\.hash/) || url.match(/\.bin/) || url.match(/\.bundle/)) {
+                        console.log("Test Test");
+                        console.log(url);
                         return "no-store";
                     }
                 },
