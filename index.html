@@ -61,7 +61,7 @@
     </div>
     <script src="arcamera.js" type="text/javascript"></script>
     <script src="wtracker.js" type="text/javascript"></script>
-    <script src="Build/AIWEBAR_WebBuild.loader.js"></script>
+    <script src="Build/287517e3c8bb38500bf55f81a90e3343.loader.js"></script>
     <script>
         var initialize = async() =>{
             var unityCanvas = document.querySelector("#unity-canvas");
@@ -91,9 +91,24 @@
             
             document.getElementById('startARDiv').style.display = 'none';
             createUnityInstance(document.querySelector("#unity-canvas"), {
-                    dataUrl: "Build/AIWEBAR_WebBuild.data.unityweb",
-                    frameworkUrl: "Build/AIWEBAR_WebBuild.framework.js.unityweb",
-                    codeUrl: "Build/AIWEBAR_WebBuild.wasm.unityweb",
+                    dataUrl: "Build/55f1b1a6c532c58ab644a8c14afd5158.data.unityweb",
+                    frameworkUrl: "Build/8b9c39d6146def7fea8f8025e9fca045.framework.js.unityweb",
+                    codeUrl: "Build/923f2bb23a24477beb98877c719adc63.wasm.unityweb",
+                   cacheControl: function (url) {
+                     // Caching enabled for .data and .bundle files.
+                     // Revalidate if file is up to date before loading from cache
+                     if (url.match(/\.data/) || url.match(/\.bundle/)) {
+                         return "must-revalidate";
+                     }
+                     // Caching enabled for .mp4 and .custom files
+                     // Load file from cache without revalidation.
+                     if (url.match(/\.mp4/) || url.match(/\.custom/)) {
+                         return "immutable";
+                     }
+                     // Disable explicit caching for all other files.
+                     // Note: the default browser cache may cache them anyway.
+                     return "no-store";
+                   },
                     streamingAssetsUrl: "StreamingAssets",
                     companyName: "Anipen",
                     productName: "ImagineWebAR",
