@@ -91,24 +91,14 @@
             
             document.getElementById('startARDiv').style.display = 'none';
             createUnityInstance(document.querySelector("#unity-canvas"), {
-                    dataUrl: "Build/55f1b1a6c532c58ab644a8c14afd5158.data.unityweb",
+                    dataUrl: "Build/33194ea4c65582d0a92181d27e431b08.data.unityweb",
                     frameworkUrl: "Build/8b9c39d6146def7fea8f8025e9fca045.framework.js.unityweb",
                     codeUrl: "Build/923f2bb23a24477beb98877c719adc63.wasm.unityweb",
                    cacheControl: function (url) {
-                     // Caching enabled for .data and .bundle files.
-                     // Revalidate if file is up to date before loading from cache
-                     if (url.match(/\.data/) || url.match(/\.bundle/)) {
-                         return "must-revalidate";
-                     }
-                     // Caching enabled for .mp4 and .custom files
-                     // Load file from cache without revalidation.
-                     if (url.match(/\.mp4/) || url.match(/\.custom/)) {
-                         return "immutable";
-                     }
-                     // Disable explicit caching for all other files.
-                     // Note: the default browser cache may cache them anyway.
-                     return "no-store";
-                   },
+                    if (url.match(/\.hash/) || url.match(/\.bin/) || url.match(/\.bundle/)) {
+                        return "no-store";
+                    }
+                },
                     streamingAssetsUrl: "StreamingAssets",
                     companyName: "Anipen",
                     productName: "ImagineWebAR",
